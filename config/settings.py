@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_gis',
     "django.contrib.gis",
-    'testbulletin'
+    'testbulletin',
+    'leaflet',
+    # 'djgeojson',
+    
 ]
 
 MIDDLEWARE = [
@@ -150,5 +153,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = ("/home/andrey_mazo/Projects/Vagnertest/static", )
+
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
+
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+
+

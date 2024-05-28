@@ -3,6 +3,7 @@
 .env
 __pycache__
 /static/
+staticfiles
 workingtime/static/
 /node_modules/
 package-lock.json

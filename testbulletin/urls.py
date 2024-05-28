@@ -2,10 +2,11 @@ from django.urls import path
 
 from testbulletin.apps import TestbulletinConfig
 
-from .views import MarkersMapView
+from testbulletin.views import MarkersMapView
 
 app_name = TestbulletinConfig.name
 
 urlpatterns = [
-    path("", MarkersMapView.as_view()),
+    path("", MarkersMapView),
+    # path("", MarkersMapView.as_view()),
 ]
