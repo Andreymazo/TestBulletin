@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_gis',
+    "django.contrib.gis",
     'testbulletin'
 ]
 
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,7 +86,7 @@ DATABASES = {
 
        # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',# 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME'),
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
@@ -134,3 +137,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_URL = '/media/'
+# # PATH_TO_YOUR_STATIC_FOLDER='/static/'
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     # BASE_DIR/PATH_TO_YOUR_STATIC_FOLDER,
+# ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = ("/home/andrey_mazo/Projects/Vagnertest/static", )
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
