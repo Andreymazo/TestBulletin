@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     'testbulletin',
     'leaflet',
-    # 'djgeojson',
+    'djgeojson',
     
 ]
 
